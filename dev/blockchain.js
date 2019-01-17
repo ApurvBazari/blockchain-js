@@ -4,6 +4,7 @@ class Blockchain {
   constructor() {
     this.chain = [];
     this.pendingTransactions = [];
+    this.createNewBlock(null, null, null); // To create the genesis block.
   }
 
   /*
@@ -53,6 +54,26 @@ class Blockchain {
       prevBlockHash + nonce.toString() + JSON.stringify(currentBlockData);
     const hash = sha256(data);
     return hash;
+  };
+
+  /*
+    Proof Of Work consensus algorithm which provides the security of the 
+    blockchain.
+    For this particular POW we check in the first 4 digits of the new hash 
+    equals to '0000'. Else change the nonce and try again till the condition
+    is satisfied.
+    It finds the correct nonce which helps to satisfy the given condition
+  */
+  proofOfWork = (prevBlockHash, currentBlockData) => {
+    let nonce = 0;
+    let hash = this.hashBlock(prevBlockHash, currentBlockData, nonce);
+    //  Conditional Check
+    while (hash.substring(0, 4) !== '0000') {
+      nonce++;
+      hash = this.hashBlock(prevBlockHash, currentBlockData, nonce);
+      console.log(hash);
+    }
+    return nonce;
   };
 }
 
