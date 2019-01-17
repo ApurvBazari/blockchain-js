@@ -1,0 +1,22 @@
+{
+  "name": "blockchain-pow",
+  "version": "1.0.0",
+  "description": "Sample Blockchain with POW",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel dev -d lib",
+    "start": "npm run build && node lib/test.js"
+  },
+  "author": "Apurv Bazari",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/preset-env": "^7.2.3"
+  },
+  "dependencies": {
+    "sha256": "^0.2.0"
+  }
+}
