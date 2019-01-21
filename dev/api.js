@@ -1,8 +1,9 @@
-const express = require('express');
+import express from 'express';
+import bodyParser from 'body-parser';
+import uuid from 'uuid/v1';
+import Blockchain from './blockchain';
+
 const app = express();
-const bodyParser = require('body-parser');
-const Blockchain = require('./blockchain').Blockchain;
-const uuid = require('uuid/v1');
 
 const nodeAddress = uuid()
   .split('-')

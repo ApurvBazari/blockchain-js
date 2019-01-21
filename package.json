@@ -12,6 +12,7 @@
   "author": "Apurv Bazari",
   "license": "ISC",
   "devDependencies": {
+    "@babel/node": "^7.2.2",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
@@ -19,7 +20,6 @@
     "nodemon": "^1.18.9"
   },
   "dependencies": {
-    "@babel/node": "^7.2.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "sha256": "^0.2.0",

@@ -1,6 +1,5 @@
-const sha256 = require('sha256');
-
-class Blockchain {
+import sha256 from 'sha256';
+export default class Blockchain {
   constructor() {
     this.chain = [];
     this.pendingTransactions = [];
@@ -75,5 +74,3 @@ class Blockchain {
     return nonce;
   };
 }
-
-exports.Blockchain = Blockchain;
