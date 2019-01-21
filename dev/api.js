@@ -14,11 +14,11 @@ const coin = new Blockchain();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/blockchain', function(req, res) {
+app.get('/blockchain', (req, res) => {
   res.send(coin);
 });
 
-app.post('/transaction', function(req, res) {
+app.post('/transaction', (req, res) => {
   const { amount, sender, recipient } = req.body;
   const blockIndex = coin.createNewTransaction(amount, sender, recipient);
   res.json({
@@ -26,7 +26,7 @@ app.post('/transaction', function(req, res) {
   });
 });
 
-app.get('/mine', function(req, res) {
+app.get('/mine', (req, res) => {
   const lastBlock = coin.getLastBlock();
   const prevBlockHash = lastBlock['hash'];
   const currentBlockData = {
@@ -48,6 +48,6 @@ app.get('/mine', function(req, res) {
   });
 });
 
-app.listen(8080, function() {
+app.listen(8080, () => {
   console.log('Blockchain server running on port 8080');
 });
