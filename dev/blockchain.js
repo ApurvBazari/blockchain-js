@@ -1,7 +1,11 @@
 import sha256 from 'sha256';
+
+const currentNodeUrl = process.argv[3];
 export default class Blockchain {
   constructor() {
-    this.chain = [];
+    this.chain = []; // The Main Chain for our Blockchain.
+    this.currentNodeUrl = currentNodeUrl;
+    this.networkNodes = []; // Keep a list of all the Urls in the blockchain network
     this.pendingTransactions = [];
     this.createNewBlock(0, '0', '0'); // To create the genesis block.
   }
