@@ -73,7 +73,7 @@ app.post('/register-and-broadcast-node', (req, res) => {
     const requestOptions = {
       uri: nodeUrl + '/register-node',
       method: 'POST',
-      body: { nodeUrl: nodeUrl },
+      body: { nodeUrl: newNodeUrl },
       json: true
     };
     regNodesPromises.push(rp(requestOptions));
